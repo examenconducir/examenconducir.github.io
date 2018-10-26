@@ -17,12 +17,14 @@ namespace examen
 
             sb.AppendLine(File.ReadAllText("start.html"));
 
+            var count = 0;
             foreach (JObject q in json["questions"].AsJEnumerable())
             {
+                count++;
                 var question = q.Value<string>("q");
                 var image = q.Value<string>("i");
 
-                sb.AppendLine($"<p class='question'>{question}</p>");
+                sb.AppendLine($"<p class='question'>{count}. {question}</p>");
                 if (!string.IsNullOrWhiteSpace(image))
                 {
                     sb.AppendLine(image);
@@ -38,6 +40,8 @@ namespace examen
                 }
                 sb.AppendLine("</ul>");
             }
+            sb.AppendLine("<br />");
+            sb.AppendLine("<br />");
             sb.AppendLine("<br />");
             sb.AppendLine("<br />");
 
