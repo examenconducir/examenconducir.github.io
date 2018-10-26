@@ -39,11 +39,9 @@ namespace examen
                     sb.AppendLine($"<li class='{cssClass}'>{text}</li>");
                 }
                 sb.AppendLine("</ul>");
+                sb.AppendLine("<br />");
+                sb.AppendLine("<br />");
             }
-            sb.AppendLine("<br />");
-            sb.AppendLine("<br />");
-            sb.AppendLine("<br />");
-            sb.AppendLine("<br />");
 
             sb.AppendLine(File.ReadAllText("end.html"));
 
